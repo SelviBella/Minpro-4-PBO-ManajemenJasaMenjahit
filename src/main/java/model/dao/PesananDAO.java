@@ -58,7 +58,7 @@ public class PesananDAO {
     public List<Pesanan> getAllPesanan() {
         EntityManager em = emf.createEntityManager();
         try {
-            return em.createQuery("SELECT p FROM PesananEntity p", Pesanan.class).getResultList();
+            return em.createQuery("SELECT p FROM Pesanan p", Pesanan.class).getResultList();
         } finally {
             em.close();
         }
