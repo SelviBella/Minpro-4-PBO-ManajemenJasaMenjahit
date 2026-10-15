@@ -14,31 +14,31 @@ Program Manajemen Jasa Menjahit merupakan aplikasi berbasis Java yang digunakan 
 ---
 ## Struktur Package
 
-Source code dibagi menjadi beberapa package agar setiap bagian program memiliki fungsi yang jelas.
+Program dibagi menjadi beberapa package agar setiap bagian program memiliki fungsi yang jelas.
 
 1. config
 
-Berisi Koneksi.java yang digunakan untuk mengatur koneksi antara program Java dan database MySQL.
+   Berisi file Koneksi.java yang digunakan untuk mengatur koneksi antara program Java dan database MySQL.
 
 2. model
 
-Berisi class yang merepresentasikan data dan layanan dalam program, seperti Pelanggan.java, Layanan.java, LayananJahitBaru.java, LayananPermak.java, dan PesananEntity.java. Class Layanan digunakan sebagai class induk, sedangkan PesananEntity berfungsi sebagai entity yang dipetakan ke database menggunakan ORM.
+   Berisi class yang merepresentasikan data dan layanan dalam program, seperti file Pelanggan.java, Layanan.java, LayananJahitBaru.java, LayananPermak.java, dan PesananEntity.java. Class Layanan digunakan sebagai class induk, sedangkan PesananEntity berfungsi sebagai entity yang dipetakan ke database menggunakan ORM.
 
 3. model.dao
 
-Berisi PesananDAO.java yang menangani proses pengolahan data pesanan, seperti menambahkan, menampilkan, memperbarui status, dan menghapus pesanan.
+   Berisi file PesananDAO.java yang menangani proses pengolahan data pesanan, seperti menambahkan, menampilkan, memperbarui status, dan menghapus pesanan.
 
 4. view
 
-Berisi PenjahitView.java yang menampilkan menu program melalui terminal serta menerima input dari pengguna.
+   Berisi file PenjahitView.java yang menampilkan menu program melalui terminal serta menerima input dari pengguna.
 
 5. controller
 
-Berisi PenjahitController.java yang menghubungkan bagian view dengan proses pengolahan data melalui DAO.
+   Berisi file PenjahitController.java yang menghubungkan bagian view dengan proses pengolahan data melalui DAO.
 
 6. main
  
-Berisi class utama yang digunakan untuk menjalankan aplikasi.
+   Berisi class utama yang digunakan untuk menjalankan aplikasi.
 
 ---
 ## Alur Program
@@ -92,18 +92,15 @@ Inheritance diterapkan melalui kelas `Layanan` sebagai kelas induk yang diwarisk
 
   <img width="705" height="163" alt="image" src="https://github.com/user-attachments/assets/8d2555bf-154c-4171-80f7-1bdd408cc842" />
 
-Kata kunci `extends` menunjukkan bahwa `LayananJahitBaru` mewarisi atribut dan perilaku dari kelas `Layanan`. Kelas `LayananPermak` juga menggunakan `extends Layanan`.
+  Kata kunci `extends` menunjukkan bahwa `LayananJahitBaru` mewarisi atribut dan perilaku dari kelas `Layanan`. Kelas `LayananPermak` juga menggunakan `extends Layanan`.
 
-<img width="687" height="166" alt="image" src="https://github.com/user-attachments/assets/d225ae8a-cd7b-4713-bbaf-fc18c5094ed8" />
+
+* Kelas Anak LayananPermak
+
+  <img width="687" height="166" alt="image" src="https://github.com/user-attachments/assets/d225ae8a-cd7b-4713-bbaf-fc18c5094ed8" />
 
 ---
 ## Polymorphism dan Abstraction
-
-### Abstraction
-
-Abstraction diterapkan melalui kelas abstrak `Layanan` dan method abstrak `hitungTotalBiaya()`. Method tersebut menentukan bahwa setiap jenis layanan harus memiliki perhitungan biaya, tetapi rumusnya ditentukan oleh kelas turunan.
-
-<img width="615" height="222" alt="image" src="https://github.com/user-attachments/assets/2df6e7e3-06eb-4bb4-aeea-0ca5a47da7f1" />
 
 ### Polymorphic Overriding
 
@@ -126,6 +123,12 @@ Overloading diterapkan melalui dua method `tampilkanInvoice()` yang memiliki nam
 <img width="1547" height="452" alt="image" src="https://github.com/user-attachments/assets/857c4962-296c-4668-a959-0eec405c5ace" />
 
 Method pertama menampilkan informasi pesanan dalam format lengkap, sedangkan method kedua menerima parameter `boolean` untuk menentukan format ringkas atau lengkap.
+
+### Abstraction
+
+Abstraction diterapkan melalui kelas abstrak `Layanan` dan method abstrak `hitungTotalBiaya()`. Method tersebut menentukan bahwa setiap jenis layanan harus memiliki perhitungan biaya, tetapi rumusnya ditentukan oleh kelas turunan.
+
+<img width="615" height="222" alt="image" src="https://github.com/user-attachments/assets/2df6e7e3-06eb-4bb4-aeea-0ca5a47da7f1" />
 
 ---
 ## JDBC dan PreparedStatement
