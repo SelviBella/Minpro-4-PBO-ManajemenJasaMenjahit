@@ -12,7 +12,7 @@ import jakarta.persistence.*;
  *
  * @author ASUS
  */
-public class PesananEntity {
+public class Pesanan {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_pesanan")
@@ -43,9 +43,9 @@ public class PesananEntity {
     @Column(name = "status_pesanan")
     private String statusPesanan;
 
-    public PesananEntity() {} 
+    public Pesanan() {} 
 
-    public PesananEntity(Pelanggan pelanggan, String jenisLayanan, String detailLayanan, String jenisPakaian, String ukuran, int jumlah, double totalBayar) {
+    public Pesanan(Pelanggan pelanggan, String jenisLayanan, String detailLayanan, String jenisPakaian, String ukuran, int jumlah, double totalBayar) {
         this.pelanggan = pelanggan;
         this.jenisLayanan = jenisLayanan;
         this.detailLayanan = detailLayanan;

@@ -7,7 +7,7 @@
     <persistence-unit name="menjahitPU" transaction-type="RESOURCE_LOCAL">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         <class>model.Pelanggan</class>
-        <class>model.PesananEntity</class>
+        <class>model.Pesanan</class>
         
         <properties>
             <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/db_menjahit"/>

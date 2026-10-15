@@ -122,7 +122,7 @@ public class PenjahitView {
         if (list.isEmpty()) {
             System.out.println("Antrean di database kosong.");
         } else {
-            for (PesananEntity p : list) {
+            for (Pesanan p : list) {
                 if (format == 2) p.tampilkanInvoice(true);
                 else p.tampilkanInvoice();
             }

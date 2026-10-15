@@ -6,7 +6,7 @@ package controller;
 
 import model.Pelanggan;
 import model.Layanan;
-import model.PesananEntity;
+import model.Pesanan;
 import model.dao.PesananDAO;
 import java.util.List;
 /**
@@ -18,11 +18,11 @@ public class PenjahitController {
 
     public void tambahPesanan(Pelanggan pelanggan, Layanan layanan, String detail, String jenis, String ukuran, int jumlah) {
         double total = layanan.hitungTotalBiaya(jumlah);
-        PesananEntity baru = new PesananEntity(pelanggan, layanan.getJenisLayanan(), detail, jenis, ukuran, jumlah, total);
+        Pesanan baru = new Pesanan(pelanggan, layanan.getJenisLayanan(), detail, jenis, ukuran, jumlah, total);
         pesananDAO.save(baru);
     }
 
-    public List<PesananEntity> getDaftarPesanan() {
+    public List<Pesanan> getDaftarPesanan() {
         return pesananDAO.getAllPesanan(); 
     }
 
